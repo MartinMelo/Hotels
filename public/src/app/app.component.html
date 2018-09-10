@@ -1,0 +1,75 @@
+<header>
+  <img src="../assets/images/logo-almundo.svg">
+</header>
+<main class="container-fluid">
+  <div class="row filters">
+    <div class="col-md-4">
+      <div class="title">
+        <h3>Filtros</h3>
+      </div>
+      <div class="hotelName">
+        <h3>Nombre de hotel</h3>
+        <input placeholder="Ingrese el nombre del hotel">
+        <button class="btn">Aceptar</button>
+      </div>
+      <div class="stars">
+        <h3>Estrellas</h3>
+        <ul class="starsFilter">
+          <li>
+            <input type="checkbox">Todas las estrellas
+          </li>
+          <li>
+            <input type="checkbox">
+            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
+            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
+            <img src="../assets/icons/filters/star.svg" class="star">
+          </li>
+          <li>
+            <input type="checkbox">
+            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
+            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
+          </li>
+          <li>
+            <input type="checkbox">
+            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
+            <img src="../assets/icons/filters/star.svg" class="star">
+          </li>
+          <li>
+            <input type="checkbox">
+            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
+          </li>
+          <li>
+            <input type="checkbox">
+            <img src="../assets/icons/filters/star.svg" class="star">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row hotel" *ngFor="let  hotel of hotels;">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../assets/images/hotels/{{hotel.image}}" class="hotelImage" alt="hotel_image">
+            </div>
+            <div class="col-md-6 hotelInfo">
+              <h3>{{hotel.name}}</h3>
+              <div class="hotelStars">
+                <img src="../assets/icons/filters/star.svg">
+              </div>
+              <div class="amenities">
+                <img src="../assets/icons/amenities/{{amenitie}}.svg" *ngFor="let amenitie of hotel.amenities;">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="infoPrecio col-md-4">
+          <span>Precio por noche por hotel</span>
+          <h2>ARS <strong>{{hotel.price}}</strong></h2>
+          <button class="btn btn-lg">Ver hotel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,58 @@
+header{
+  background: #184280;
+  width: 100%;
+  height: 10%;
+  min-height: 75px;
+}
+main{
+  margin-top: 10px;
+  background: lightgrey !important;
+}
+
+main button{
+  background: #184280;
+}
+.filters .title,.hotelName,.stars{
+  margin-bottom: 0.5rem;
+  background: white;
+}
+.hotel{
+  background: white;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-bottom: 15px !important;
+}
+.star{
+  width: 15px;
+  color: gold;
+}
+.infoPrecio{
+  border-left: darkgrey 1px dashed;
+}
+.infoPrecio button{
+  color: white;
+}
+.infoPrecio h2{
+  color: #ea6422;
+}
+.starsFilter{
+  list-style: none;
+}
+.hotelStars img{
+  width: 25px;
+  margin: 1%;
+}
+.amenities img{
+  width: 30px;
+  margin: 1%;
+}
+.hotelInfo{
+  margin-top: 10px;
+}
+.hotelInfo h3{
+  color:  #184280;
+}
+.hotelImage{
+  width: 100%;
+  padding: 10px;
+}
