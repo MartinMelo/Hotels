@@ -11,10 +11,23 @@ main{
 
 main button{
   background: #184280;
+  color: white;
 }
 .filters .title,.hotelName,.stars{
   margin-bottom: 0.5rem;
   background: white;
+}
+.filters button{
+  margin-left: 7%;
+}
+.filters h4{
+  color: lightblue;
+}
+.stars h4 img{
+  width: 15px;
+}
+.hotelName h4 img,.stars h4 img{
+  width: 15px;
 }
 .hotel{
   background: white;
@@ -22,9 +35,27 @@ main button{
   margin-left: 0 !important;
   margin-bottom: 15px !important;
 }
+.search{
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background-color: lightblue;
+  -webkit-mask-box-image: url(../assets/icons/filters/search.svg)
+}
 .star{
   width: 15px;
-  color: gold;
+  height: 15px;
+  display: inline-block;
+  background-color: lightblue;
+  -webkit-mask-box-image: url(../assets/icons/filters/star.svg)
+}
+.starsFilter .search{
+  background-color: gold;
+  margin-left:5px;
+}
+.starsFilter .star{
+  background-color: gold;
+  margin-left:5px;
 }
 .infoPrecio{
   border-left: darkgrey 1px dashed;
@@ -35,12 +66,24 @@ main button{
 .infoPrecio h2{
   color: #ea6422;
 }
+.infoPrecio >div{
+  margin-top: calc(50% - 100px);
+  text-align: center;
+}
 .starsFilter{
   list-style: none;
 }
 .hotelStars img{
   width: 25px;
   margin: 1%;
+}
+.hotelStars{
+  width: 25px;
+  height: 25px;
+  margin: 1%;
+  display: inline-block;
+  background-color: gold;
+  -webkit-mask-box-image: url(../assets/icons/filters/star.svg)
 }
 .amenities img{
   width: 30px;

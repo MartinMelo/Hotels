@@ -8,39 +8,45 @@
         <h3>Filtros</h3>
       </div>
       <div class="hotelName">
-        <h3>Nombre de hotel</h3>
-        <input placeholder="Ingrese el nombre del hotel">
-        <button class="btn">Aceptar</button>
+        <h4>
+          <div class="search"></div>
+          Nombre de hotel
+        </h4>
+        <input type="text"  placeholder="Ingrese el nombre del hotel" [(ngModel)]="name">
+        <button class="btn" type="submit" (click)="hotelsByName()" >Aceptar</button>
       </div>
       <div class="stars">
-        <h3>Estrellas</h3>
+        <h4>
+          <div class="star"></div>
+          Estrellas
+        </h4>
         <ul class="starsFilter">
           <li>
-            <input type="checkbox">Todas las estrellas
+            <input type="checkbox" (change)="allHotels()">Todas las estrellas
           </li>
           <li>
-            <input type="checkbox">
-            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
-            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
-            <img src="../assets/icons/filters/star.svg" class="star">
+            <input type="checkbox" (change)="hotelsByStars(5)">
+            <div class="star"></div><div class="star"></div>
+            <div class="star"></div><div class="star"></div>
+            <div class="star"></div>
           </li>
           <li>
-            <input type="checkbox">
-            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
-            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
+            <input type="checkbox" (change)="hotelsByStars(4)">
+            <div class="star"></div><div class="star"></div>
+            <div class="star"></div><div class="star"></div>
           </li>
           <li>
-            <input type="checkbox">
-            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
-            <img src="../assets/icons/filters/star.svg" class="star">
+            <input type="checkbox" (change)="hotelsByStars(3)">
+            <div class="star"></div><div class="star"></div>
+            <div class="star"></div>
           </li>
           <li>
-            <input type="checkbox">
-            <img src="../assets/icons/filters/star.svg" class="star"><img src="../assets/icons/filters/star.svg" class="star">
+            <input type="checkbox" (change)="hotelsByStars(2)">
+            <div class="star"></div><div class="star"></div>
           </li>
           <li>
-            <input type="checkbox">
-            <img src="../assets/icons/filters/star.svg" class="star">
+            <input type="checkbox" (change)="hotelsByStars(1)">
+            <div class="star"></div>
           </li>
         </ul>
       </div>
@@ -54,9 +60,11 @@
             </div>
             <div class="col-md-6 hotelInfo">
               <h3>{{hotel.name}}</h3>
-              <div class="hotelStars">
-                <img src="../assets/icons/filters/star.svg">
-              </div>
+              <div class="hotelStars" *ngIf="hotel.stars >= 5"></div>
+              <div class="hotelStars" *ngIf="hotel.stars >= 4"></div>
+              <div class="hotelStars" *ngIf="hotel.stars >= 3"></div>
+              <div class="hotelStars" *ngIf="hotel.stars >= 2"></div>
+              <div class="hotelStars" *ngIf="hotel.stars >= 1"></div>
               <div class="amenities">
                 <img src="../assets/icons/amenities/{{amenitie}}.svg" *ngFor="let amenitie of hotel.amenities;">
               </div>
@@ -65,9 +73,11 @@
 
         </div>
         <div class="infoPrecio col-md-4">
+          <div>
           <span>Precio por noche por hotel</span>
           <h2>ARS <strong>{{hotel.price}}</strong></h2>
           <button class="btn btn-lg">Ver hotel</button>
+          </div>
         </div>
       </div>
     </div>
